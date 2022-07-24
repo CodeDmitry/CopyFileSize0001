@@ -55,6 +55,3 @@ The name is meant to be generic enough to not collide with system or other peopl
 
 It is not perfect, but I felt the design decisions I have made are a reasonable compromise to get the utility published within 30 minutes(Having not written C# in a fair while).
  
-**Todo**
-
-Reimplement in WINAPI/C in Visual Studio 6, that is forward compatible to windows 10, and can be compiled without being tied down to Visual Studio(via mingw) if necessary.
