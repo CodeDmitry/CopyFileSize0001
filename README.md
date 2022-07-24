@@ -40,6 +40,9 @@ overwhelming, this meant that I had to either use the class I already had(Progra
 
 The program has to make sense to somebody with practically zero understanding of C#, so it has to be as dumb as possible.
 
+The program does NOT pass arguments to the Run method nor constructor, and opts to use Environment.GetCommandLineArgs, as I felt it saved the burden
+of needing to document the argument of Run.
+
 Initially I wanted Program to subclass something analogous to Java's Runnable to make the Run method make more sense, but I have had trouble finding 
 such an analog. 
 
