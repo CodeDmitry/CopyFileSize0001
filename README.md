@@ -1,4 +1,5 @@
 # FileSize0001
+
 A Windows utility to get size of the file on right click or as a second argument.
 
 **Background**:
@@ -11,6 +12,7 @@ Prior to making this program, I resorted to running a script each time I needed 
 This utility makes it easy to get exact file size into your clipboard without resorting to scripts or other cleverness.
 
 **How to use**:
+
 1. Compile the given file using the file `Program.cs`(be sure to import the `PresentationCore` assembly as we require the System.Windows.Clipboard component inside a C# Console Application, with output type set to Windows Application, 
 *this sounds odd, but it basically doesn't want forms, nor does it want consoles, it just wants 
 to be a right click utility with no windows nor consoles*. 
