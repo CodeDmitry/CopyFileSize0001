@@ -43,6 +43,9 @@ The program has to make sense to somebody with practically zero understanding of
 Initially I wanted Program to subclass something analogous to Java's Runnable to make the Run method make more sense, but I have had trouble finding 
 such an analog. 
 
+The return codes 25,26,27 were chosen to be distinct and deliberate, 1 is too close to 0, I want there to be as little of doubt as possible
+that it was my program that set the error code, and that the error code came from these specific states(25 + state id).
+
 The name is meant to be generic enough to not collide with system or other peoples' utilities, but not too generic for people's minds to wrap their mind around, the program must not fit in like any other normal program, as nor stand out so much as to look like it is malware(because it isn't).
 
 It is not perfect, but I felt the design decisions I have made are a reasonable compromise to get the utility published within 30 minutes(Having not written C# in a fair while).
