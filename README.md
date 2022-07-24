@@ -57,4 +57,4 @@ It is not perfect, but I felt the design decisions I have made are a reasonable 
  
 **Todo**
 
-Reimplement in WINAPI/C in Visual Studio 6, that is forward compatible to windows 10 and does not have spinning wheel when the right click menu is clicked.
+Reimplement in WINAPI/C in Visual Studio 6, that is forward compatible to windows 10, and can be compiled without being tied down to Visual Studio(via mingw) if necessary.
