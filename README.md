@@ -35,10 +35,12 @@ The above consists of two sets of quotes, `"..." "..."`, the first one should co
 
 The program is supposed to be fast to write, but at the same time I needed to make sure that every step of the program could be tested(as there are multiple components it relies on that I could imagine failing, which they did, The services provided by the Clipboard component do not work unless STAThread attribute is added to main, which took a bit to figure out), this meant that
 I had to resist the urge to make a one-liner. In order to maximize testability, it is good practice to make the testable parts of your program
-not be inside static methods. At the same time, I want to have it all be a single file to make it easy to add to github without being
-overwhelming, this meant that I had to either use the class I already had(Program), or create an inner class which would add unnecessary complexity.
+not be inside static methods. 
 
-The program has to make sense to somebody with practically zero understanding of C#, so it has to be as dumb as possible.
+I want to have it all be a single file to make it easy to add to github without being
+overwhelming(I do not believe it is okay to have source code under 4000 bytes, but have over 1,000,000 bytes of visual studio project caches/boilerplate).
+
+The program had to make sense to somebody with practically zero understanding of C#, so it has to be as dumb as possible. It fails, as STAThread attribute is a little on the advanced side, but other than that it is fairly straightforward. 
 
 The program does NOT pass arguments to the Run method nor constructor, and opts to use Environment.GetCommandLineArgs, as I felt it saved the burden
 of needing to document the argument of Run.
