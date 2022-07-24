@@ -49,7 +49,7 @@ Initially I wanted Program to subclass something analogous to Java's Runnable to
 such an analog. 
 
 The return codes 25, 26, 27 were chosen to be distinct and deliberate, 1 is too close to 0, I want there to be as little of doubt as possible
-that it was my program that set the error code, and that the error code came from these specific states(25 + state id).
+that it was my program that set the error code, and that the error code came from these specific states(25 + state id). Also the error codes must be hardcoded to make it easy to ctrl-f for them inside the code, as 25, 26, 27 only occur once inside the file.
 
 The name is meant to be generic enough to not collide with system or other peoples' utilities, but not too generic for people's minds to wrap their mind around, the program must not fit in like any other normal program, as nor stand out so much as to look like it is malware(because it isn't).
 
