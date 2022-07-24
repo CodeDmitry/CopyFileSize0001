@@ -18,7 +18,7 @@ namespace FileSize0001
         }
 
         // | used for state logging, body commented out on release.
-        private void log(string s) {
+        private void log(in string s) {
             // Console.WriteLine(s);
         }
 
