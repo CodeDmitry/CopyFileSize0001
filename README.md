@@ -1,2 +1,42 @@
 # FileSize0001
-A utility to get size of the file on right click or as a second argument.
+A Windows utility to get size of the file on right click or as a second argument.
+
+**Background**:
+I have created this program because I find myself constantly in need of checking the exact file size of a files.  
+
+Unforuntately, Windows shell makes it difficult to get exact size in bytes, it gives a "MB"/"Kb" estimate which sometimes overshoots and sometimes undershoots.
+
+Prior to making this program, I resorted to running a script each time I needed to get the size of a file, which felt a little tedious.
+
+This utility makes it easy to get exact file size into your clipboard without resorting to scripts or other cleverness.
+
+**How to use**:
+1. Compile the given file using the file `Program.cs` inside a C# Console Application, with output type set to Windows Application, 
+*this sounds odd, but it basically doesn't want forms, nor does it want consoles, it just wants 
+to be a right click utility with no windows nor consoles*.
+
+2. Once built, you may move the generated executable into a more stable location such as program files.
+
+3. Open RegEdit and go to `HKEY_CLASSES_ROOT->*->shell`, right click the text shell key(it has a folder icon next to it) and click `New->Key`
+name this key "Get File Size", then right click this new subkey and click "New->Key" and name it "command". Click on the new "command" subkey,
+and the right side of the screen should have a row named "(Default)", double click on this row and enter the following:
+
+```
+"C:\Users\16472\source\repos\FileSize0001\FileSize0001\bin\Release\FileSize0001.exe" "%1"
+```
+
+The above consists of two sets of quotes, `"..." "..."`, the first one should contain the path of your generated executable, while the second one should remain unchanged(keep it as "%1", as that will tell our program where the path of the file to get size of is located).
+
+4. Verify that right clicking any file has a "Get File Size" option, and clicking on that option copies the exact size of the file into your system clipboard(like ctrl c would).
+
+**Why the Design**
+It is suppose to be fast to write, but at the same time I needed to make sure that every step of the program could be tested, this meant that
+I had to resist the urge to make a one-liner. In order to maximize testability, it is good practice to make the testable parts of your program
+not be inside static methods. At the same time, I want to have it all be a single file to make it easy to add to github without being
+overwhelming, this meant that I had to either use the class I already had(Program), or create an inner class which would add unnecessary complexity.
+
+Initially I wanted Program to subclass something analogous to Java's Runnable to make the Run method make more sense, but I have had trouble finding 
+such an analog. 
+
+It is not perfect, but I felt the design decisions I have made are a reasonable compromise to get the utility published within 30 minutes(Having not written C# in a fair while).
+ 
