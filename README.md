@@ -11,9 +11,9 @@ Prior to making this program, I resorted to running a script each time I needed 
 This utility makes it easy to get exact file size into your clipboard without resorting to scripts or other cleverness.
 
 **How to use**:
-1. Compile the given file using the file `Program.cs` inside a C# Console Application, with output type set to Windows Application, 
+1. Compile the given file using the file `Program.cs`(be sure to import the `PresentationCore` assembly as we require the System.Windows.Clipboard component inside a C# Console Application, with output type set to Windows Application, 
 *this sounds odd, but it basically doesn't want forms, nor does it want consoles, it just wants 
-to be a right click utility with no windows nor consoles*.
+to be a right click utility with no windows nor consoles*. 
 
 2. Once built, you may move the generated executable into a more stable location such as program files.
 
@@ -30,13 +30,16 @@ The above consists of two sets of quotes, `"..." "..."`, the first one should co
 4. Verify that right clicking any file has a "Get File Size" option, and clicking on that option copies the exact size of the file into your system clipboard(like ctrl c would).
 
 **Why the Design**
-It is suppose to be fast to write, but at the same time I needed to make sure that every step of the program could be tested, this meant that
+
+It is suppose to be fast to write, but at the same time I needed to make sure that every step of the program could be tested(as there are multiple components it relies on that I could imagine failing, which they did, The services provided by the Clipboard component do not work unless STAThread attribute is added to main, which took a bit to figure out), this meant that
 I had to resist the urge to make a one-liner. In order to maximize testability, it is good practice to make the testable parts of your program
 not be inside static methods. At the same time, I want to have it all be a single file to make it easy to add to github without being
 overwhelming, this meant that I had to either use the class I already had(Program), or create an inner class which would add unnecessary complexity.
 
 Initially I wanted Program to subclass something analogous to Java's Runnable to make the Run method make more sense, but I have had trouble finding 
 such an analog. 
+
+The name is meant to be generic enough to not collide with system or other peoples' utilities, but not too generic for people's minds to wrap their mind around, the program must not fit in like any other normal program, as nor stand out so much as to look like it is malware(because it isn't).
 
 It is not perfect, but I felt the design decisions I have made are a reasonable compromise to get the utility published within 30 minutes(Having not written C# in a fair while).
  
