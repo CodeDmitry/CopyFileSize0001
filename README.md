@@ -38,7 +38,7 @@ I had to resist the urge to make a one-liner. In order to maximize testability, 
 not be inside static methods. At the same time, I want to have it all be a single file to make it easy to add to github without being
 overwhelming, this meant that I had to either use the class I already had(Program), or create an inner class which would add unnecessary complexity.
 
-The program has to make sense to somebody with practically zero understanding of C#, so it has to not be clever.
+The program has to make sense to somebody with practically zero understanding of C#, so it has to be as dumb as possible.
 
 Initially I wanted Program to subclass something analogous to Java's Runnable to make the Run method make more sense, but I have had trouble finding 
 such an analog. 
