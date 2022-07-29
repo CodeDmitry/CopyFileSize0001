@@ -31,17 +31,22 @@ namespace FileSize0001
         // |     2. after obtaining size of file
         // |     3. end state(after setting the clipboard to the file size)
         // | If there is a failure at any time, main will return an error code for the state(25 + state number). 
-        public void Run() 
+        // | Argument is provided as a test feature, we do not use it as it forces Main to do argument checking, 
+        // |     which is undesireable.
+        public void Run(in string strTestPath=null) 
         {
-            string strCurrentFilePath = null;
+            string strCurrentFilePath = strTestPath;
             string strFileSize = null;
             
             log("state 0: entry state");
             
-            try {
-                strCurrentFilePath = Environment.GetCommandLineArgs()[1];
-            } catch (Exception) {
-                Environment.Exit(25);
+            // | If no path is given, get it from the environment.
+            if (strCurrentFilePath == null) {
+                try {
+                    strCurrentFilePath = Environment.GetCommandLineArgs()[1];
+                } catch (Exception) {
+                    Environment.Exit(25);
+                }
             }
             log("state 1: got path(" + strCurrentFilePath + ")");
                         
