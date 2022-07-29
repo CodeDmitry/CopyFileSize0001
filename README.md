@@ -1,4 +1,4 @@
-# FileSize0001
+# CopyFileSize0001
 
 A Windows utility to copy size of the file on right click or as a second argument into the windows clipboard.
 
