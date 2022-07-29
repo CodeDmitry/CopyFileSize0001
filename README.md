@@ -53,5 +53,8 @@ that it was my program that set the error code, and that the error code came fro
 
 The name is meant to be generic enough to not collide with system or other peoples' utilities, but not too generic for people's minds to wrap their mind around, the program must not fit in like any other normal program, as nor stand out so much as to look like it is malware(because it isn't).
 
+The optional path argument to run is purely for testing purposes(to mock the path), we avoid passing the 
+argument directly into run because it would force main to check its argument[1] before it is passed, which increases complexity of reading the code.
+
 It is not perfect, but I felt the design decisions I have made are a reasonable compromise to get the utility published within 30 minutes(Having not written C# in a fair while).
  
