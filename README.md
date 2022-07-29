@@ -29,7 +29,7 @@ and the right side of the screen should have a row named "(Default)", double cli
 
 The above consists of two sets of quotes, `"..." "..."`, the first one should contain the path of your generated executable, while the second one should remain unchanged(keep it as "%1", as that will tell our program where the path of the file to get size of is located).
 
-4. Verify that right clicking any file has a "Get File Size" option, and clicking on that option copies the exact size of the file into your system clipboard(like ctrl c would).
+4. Verify that right clicking any file has a "Copy File Size" option, and clicking on that option copies the exact size of the file into your system clipboard(like ctrl c would).
 
 **Why the Design**
 
