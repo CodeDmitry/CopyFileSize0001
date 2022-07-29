@@ -1,6 +1,6 @@
 # FileSize0001
 
-A Windows utility to get size of the file on right click or as a second argument.
+A Windows utility to copy size of the file on right click or as a second argument into the windows clipboard.
 
 **Background**:
 I have created this program because I find myself constantly in need of checking the exact file size of a files.  
