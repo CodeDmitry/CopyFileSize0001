@@ -20,7 +20,7 @@ to be a right click utility with no windows nor consoles*.
 2. Once built, you may move the generated executable into a more stable location such as program files.
 
 3. Open RegEdit and go to `HKEY_CLASSES_ROOT->*->shell`, right click the text shell key(it has a folder icon next to it) and click `New->Key`
-name this key "Get File Size", then right click this new subkey and click "New->Key" and name it "command". Click on the new "command" subkey,
+name this key "Copy File Size", then right click this new subkey and click "New->Key" and name it "command". Click on the new "command" subkey,
 and the right side of the screen should have a row named "(Default)", double click on this row and enter the following:
 
 ```
